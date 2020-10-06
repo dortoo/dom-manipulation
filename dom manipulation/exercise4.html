@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <div id="app">
+    </div>
+
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+
+      var app = document.querySelector('#app');
+
+      var list = document.createElement('ul');
+
+      nomes.forEach(function (nome) {
+        var li = document.createElement('li');
+        li.textContent = nome;
+        list.appendChild(li);
+      });
+
+      app.appendChild(list);
+      
+
+    </script>
+  </body>
+</html>
