@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <div id="app">
+    </div>
+
+    <script>
+      var mainElement = document.querySelector('#app');
+
+      var linkElement = document.createElement('button');
+      linkElement.setAttribute('onclick', 'criaQuadrado()');
+      linkElement.setAttribute('class', 'botao');
+
+      var textElement = document.createTextNode('Add Red Box');
+      linkElement.appendChild(textElement);
+
+      mainElement.appendChild(linkElement);
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+        var newColor = getRandomColor(); // #E943F0
+
+      function onItemHover(htmlElement) {
+        htmlElement.style.backgroundColor = getRandomColor();
+      }
+      
+      
+      function criaQuadrado() {
+        var boxElement = document.createElement('div');
+        boxElement.setAttribute('onmouseover', 'onItemHover(this)');
+
+        boxElement.style.width = 100;
+        boxElement.style.height = 100;
+        boxElement.style.backgroundColor = '#f00';
+
+        mainElement.appendChild(boxElement);
+      }
+
+    </script>
+  </body>
+</html>
