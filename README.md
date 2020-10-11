@@ -1,2 +1,2 @@
 # dom-manipulation
-Repository to store code from JavaScript course primarily focused on DOM Manipulation but also other concepts aswell.
+Repository to store code from JavaScript course primarily focused on DOM Manipulation but other concepts as well.
