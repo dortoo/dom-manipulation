@@ -1,26 +1,46 @@
 <html>
   <head>
-    <title>DOM Manipulation</title>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
   </head>
   <body>
     <div id="app">
+      <div id="box">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+      </div>
     </div>
 
     <script>
       var nomes = ["Diego", "Gabriel", "Lucas"];
 
-      var app = document.querySelector('#app');
+      var mainElement = document.querySelector('#box');
 
       var list = document.createElement('ul');
 
-      nomes.forEach(function (nome) {
-        var li = document.createElement('li');
-        li.textContent = nome;
-        list.appendChild(li);
-      });
+      var liElement;
 
-      app.appendChild(list);
-      
+      for(let index = 0; index < nomes.length; index++) {
+        liElement = document.createElement('li');
+        var text = document.createTextNode(nomes[index]);
+        liElement.appendChild(text);
+        list.appendChild(liElement);
+      }
+
+      mainElement.appendChild(list);
+
+      function adicionar() {
+        
+        var input = document.querySelector('#box input');
+
+        liElement = document.createElement('li');
+        var text = document.createTextNode(input.value);
+        liElement.appendChild(text);
+        list.appendChild(liElement);
+
+        input.value = ""; //resetting input box.
+
+      }
 
     </script>
   </body>
